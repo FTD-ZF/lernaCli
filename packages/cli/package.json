@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "template cli",
   "author": "zhaof <1421819591@qq.com>",
   "homepage": "",
@@ -21,8 +21,8 @@
     "test": "node ./__tests__/cli.test.js"
   },
   "dependencies": {
-    "@ftd-zf/init": "^0.0.0",
-    "@ftd-zf/utils": "^0.0.0",
+    "@ftd-zf/init": "^0.0.1",
+    "@ftd-zf/utils": "^0.0.1",
     "chalk": "^5.2.0",
     "commander": "^10.0.1",
     "dirname-filename-esm": "^1.1.1",
