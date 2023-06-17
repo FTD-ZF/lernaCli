@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "ftdcli",
   "private": true,
   "workspaces": [
     "packages/*"
