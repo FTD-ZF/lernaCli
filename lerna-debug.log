@@ -1,0 +1,13 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   globs: [ 'packages/init' ],
+0 silly argv   lernaVersion: '6.6.2',
+0 silly argv   '$0': 'lerna',
+0 silly argv   pkg: '@ftd-zf/command'
+0 silly argv }
+1 notice cli v6.6.2
+2 verbose rootPath /Users/ftd_zf/Desktop/github_rn_demo/cli/lernaCli
+3 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/@ftd-zf%2fcommand - Not found
+3 error     at /usr/local/lib/node_modules/lerna/node_modules/npm-registry-fetch/lib/check-response.js:95:15
+3 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+3 error     at async RegistryFetcher.packument (/usr/local/lib/node_modules/lerna/node_modules/pacote/lib/registry.js:87:19)
