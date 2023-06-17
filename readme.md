@@ -1,3 +1,10 @@
+### 使用
+npm i @ftd-zf/cli -g
+### 命令
+ftdcli 
+
+##### 开发记录
+```
 cli 入口文件
 command 命令基础类
 init 项目初始化命令
@@ -38,3 +45,4 @@ lerna add ora packages/init 进度条 loading
 lerna add execa packages/init
 
 lerna add @ftd-zf/data packages/init
+```
