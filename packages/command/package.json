@@ -1,0 +1,23 @@
+{
+  "name": "@ftd-zf/command",
+  "version": "0.0.0",
+  "description": "command",
+  "author": "zhaof <1421819591@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/command.test.js"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
+}
