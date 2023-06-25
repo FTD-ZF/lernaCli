@@ -6,7 +6,7 @@ if (isDebug()) {
 } else {
     log.level = 'info'
 }
-log.heading = 'TemplateCli'
+log.heading = 'FTDCli'
 log.addLevel('success', 2000, { fg: 'green', bg: '', bold: true })
 
 export default log

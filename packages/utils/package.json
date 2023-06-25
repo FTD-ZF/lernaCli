@@ -2,7 +2,7 @@
   "name": "@ftd-zf/utils",
   "version": "0.0.3",
   "description": "utils",
-  "author": "zhaof <1421819591@qq.com>",
+  "author": "FTD-ZF",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
