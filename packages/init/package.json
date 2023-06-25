@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/init",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "init command",
   "author": "FTD-ZF",
   "homepage": "",
@@ -17,9 +17,9 @@
     "test": "node ./__tests__/init.test.js"
   },
   "dependencies": {
-    "@ftd-zf/command": "^0.0.3",
-    "@ftd-zf/data": "^0.0.3",
-    "@ftd-zf/utils": "^0.0.3",
+    "@ftd-zf/command": "^0.0.5",
+    "@ftd-zf/data": "^0.0.5",
+    "@ftd-zf/utils": "^0.0.5",
     "execa": "^7.1.1",
     "fs-extra": "^11.1.1",
     "ora": "^6.3.1",
