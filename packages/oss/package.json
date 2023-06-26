@@ -1,0 +1,37 @@
+{
+  "name": "@ftd-zf/oss",
+  "version": "0.0.5",
+  "description": "OSS上传",
+  "author": "FTD-ZF",
+  "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTD-ZF/lernaCli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/oss.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/FTD-ZF/lernaCli/issues"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ftd-zf/command": "^0.0.5",
+    "@ftd-zf/utils": "^0.0.5",
+    "ali-oss": "^6.17.1",
+    "chalk": "^5.2.0",
+    "fs-extra": "^11.1.1"
+  }
+}

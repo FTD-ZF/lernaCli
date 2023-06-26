@@ -23,6 +23,7 @@
   "dependencies": {
     "@ftd-zf/generate": "^0.0.5",
     "@ftd-zf/init": "^0.0.5",
+    "@ftd-zf/oss": "^0.0.5",
     "@ftd-zf/utils": "^0.0.5",
     "chalk": "^5.2.0",
     "commander": "^10.0.1",
