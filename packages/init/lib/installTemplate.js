@@ -22,6 +22,39 @@ function copyFile(targetPath, template, installDir) {
     })
     spinner.stop()
     log.success('模版拷贝成功')
+    if (template.value.indexOf('webpack4') != -1) {
+        changePackageContent(installDir)
+    }
+}
+
+//修改packagejson中的内容
+function changePackageContent(installDir) {
+
+    const packageJsonDir = path.resolve(installDir + '/', 'package.json')
+
+    fse.readFile(packageJsonDir, (err, data) => {
+        log.verbose(data)
+        if (!data) {
+            return
+        }
+
+        let dataObj = JSON.parse(data)
+
+        dataObj.devDependencies['webpack'] = '4.46.0'
+        dataObj.devDependencies['@tarojs/mini-runner'] = '3.6.8'
+        dataObj.devDependencies['@tarojs/webpack-runner'] = '3.6.8'
+
+        delete dataObj.devDependencies['@tarojs/taro-loader']
+        delete dataObj.devDependencies['@tarojs/webpack5-runner']
+
+        fse.writeFile(packageJsonDir, JSON.stringify(dataObj, null, 2), (err) => {
+            if (err) {
+                log.error(err)
+            }
+        })
+
+    })
+
 }
 
 export default function installTemplate(selectedTemplate, opts) {

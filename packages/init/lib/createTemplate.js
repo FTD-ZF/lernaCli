@@ -1,6 +1,8 @@
 
 import { homedir } from 'node:os'
-import path from 'node:path'
+import path, { join } from 'node:path'
+import fse from 'fs-extra'
+import chalk from 'chalk'
 import { log, makeList, makeInput, getLatestVersion, } from '@ftd-zf/utils'
 import templateData from '@ftd-zf/data'
 
@@ -92,6 +94,11 @@ export default async function createTemplate(name, opts) {
     }
 
     log.verbose('addName', addName)
+
+    let root = process.cwd();//当前项目根目录
+    if ((await fse.pathExists(join(root, addName)))) {
+        return log.error(chalk.red(addName + '文件已经存在！'))
+    }
 
     log.verbose('selectTemplate', selectTemplate)
 

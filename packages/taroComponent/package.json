@@ -1,0 +1,35 @@
+{
+  "name": "@ftd-zf/tarocomponent",
+  "version": "0.0.6",
+  "description": "create taro component",
+  "author": "FTD-ZF",
+  "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTD-ZF/lernaCli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/taroComponent.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/FTD-ZF/lernaCli/issues"
+  },
+  "dependencies": {
+    "@ftd-zf/command": "^0.0.6",
+    "execa": "^7.1.1",
+    "path-exists": "^5.0.0"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
+}

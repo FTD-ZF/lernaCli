@@ -35,6 +35,9 @@ class InitCommand extends Command {
     //1生成项目模版
     const selectedTemplate = await createTemplate(name, opts)
     log.verbose('selectTemplate', selectedTemplate)
+    if (!selectedTemplate) {
+      return
+    }
     //2下载项目模版至缓存目录
     await downloadTemplate(selectedTemplate)
     //3安装项目模版至项目目录
