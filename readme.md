@@ -1,48 +1,73 @@
 ### 使用
 npm i @ftd-zf/cli -g
+
 ### 命令
-ftdcli 
+1. ftdcli init projectname
+初始化项目模版
+2. ftdcli taropage pagename
+新建Taro页面模块
+3. ftdcli tarocomponent componentname
+新建Taro组件模块
+4. ftdcli gen
+根据swagger文档自动化生成前端service代码
+5. ftdcli oss
+将资源上传阿里OSS
 
-##### 开发记录
+#### 项目根目录 配置文件 template.config.json
 ```
-cli 入口文件
-command 命令基础类
-init 项目初始化命令
-utils 工具类
+{
+    "openApi": [
+        {
+            "requestLibPath": "",
+            "schemaPath": "",
+            "projectName": "",
+            "serversPath": ""
+        }
+    ],
+    "upload": {
+        "dir": [
+            {
+                "assestDir": "",
+                "ossFileName": ""
+            }
+        ],
+        "aliOSS": {
+            "region": "",
+            "accessKeyId": "",
+            "accessKeySecret": "",
+            "bucket": ""
+        }
+    }
+}
+```
+
+##### 配置文件参数说明
+1. openApi （可配置多个swagger json文档）
+
+| 参数           |  描述                |
+| ----------------- | ----------------|
+|   requestLibPath  |        当前请求方法文件相对路径     |
+|   schemaPath      |         swagger json文档（本地文件或在线地址）     |
+|   projectName      |         生成文件名     |
+|   serversPath      |         生成文件相对路径     |
+|||
 
 
-cli下执行 
-npm link   让入口文件生效 脚手架命令全局安装
-lerna add import-local packages/cli
-lerna add npmlog packages/cli
-lerna add commander packages/
+2. upload dir（可配置多个上传文件）
+
+| 参数           |  描述                |
+| ----------------- | ----------------|
+|   assestDir  |       本地需要上传资源文件的相对路径    |
+|   ossFileName      |    上传资源文件名   |
+|||
+
+3. upload aliOSS （参考阿里oss参数配置信息）
 
 
-lerna  create  command
+##### 相关说明
+```
+ftdcli gen 和 ftdcli oss 命令 需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
 
-lerna add @ftd-zf/command packages/init
-lerna add @ftd-zf/init packages/cli
+ftdcli taropage pagename 和ftdcli tarocomponent componentname 在Taro项目中即可使用
 
-lerna create utils
-lerna add npmlog packages/utils
-
-lerna add @ftd-zf/utils packages/cli
-lerna add semver packages/cli  比较版本号大小
-
-lerna add chalk packages/cli
-
-lerna add dirname-filename-esm packages/cli
-lerna add fs-extra packages/cli
-
-lerna add @ftd-zf/utils packages/init
-
-lerna add inquirer packages/utils
-lerna add url-join packages/utils
-lerna add axios packages/utils
-lerna add path-exists packages/init
-lerna add fs-extra packages/init
-lerna add ora packages/init 进度条 loading
-lerna add execa packages/init
-
-lerna add @ftd-zf/data packages/init
 ```
