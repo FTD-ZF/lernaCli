@@ -50,7 +50,7 @@ npm i @ftd-zf/cli -g
 |   schemaPath      |         swagger json文档（本地文件或在线地址）     |
 |   projectName      |         生成文件名     |
 |   serversPath      |         生成文件相对路径     |
-|||
+
 
 
 2. upload dir（可配置多个上传文件）
@@ -59,15 +59,15 @@ npm i @ftd-zf/cli -g
 | ----------------- | ----------------|
 |   assestDir  |       本地需要上传资源文件的相对路径    |
 |   ossFileName      |    上传资源文件名   |
-|||
+
 
 3. upload aliOSS （参考阿里oss参数配置信息）
 
 
 ##### 相关说明
-```
-ftdcli gen 和 ftdcli oss 命令 需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
 
-ftdcli taropage pagename 和ftdcli tarocomponent componentname 在Taro项目中即可使用
+* ftdcli gen 和 ftdcli oss 命令 需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
 
-```
+* ftdcli taropage pagename 和ftdcli tarocomponent componentname 在Taro项目中即可使用
+
+* ftdcli oss 命令仅用于上传资源，项目中还需将本地资源的引用路径转化为oss线上地址（可用插件 <https://github.com/FTD-ZF/babel-plugin-replace-assets-with-url>）
