@@ -50,7 +50,8 @@ function writePageDirToConfig(pageDir) {
             let dataArr = data.split(/\r\n|\n|\r/gm)
 
             if ((dataArr[0].indexOf('defineAppConfig') != -1) && dataArr[1].indexOf('pages: [') != -1) {
-                dataArr.splice(3, 0, `        '${newConfigDir}',`)
+                
+                dataArr.splice(3, 0, `    '${newConfigDir + '/index'}',`)
                 fse.writeFile(appConfigDir, dataArr.join('\r\n'), (err) => {
                     if (err) {
                         log.error(err)
