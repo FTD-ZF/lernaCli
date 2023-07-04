@@ -27,19 +27,29 @@ function copyFile(targetPath, template, installDir) {
 
 //在taro项目中的app.config.js下写入对应的生成page的路径
 function writePageDirToConfig(pageDir) {
+    log.verbose('====writePageDirToConfig===')
+    log.verbose(pageDir)
     try {
         let root = process.cwd();//当前项目根目录
-        const dirArray = root.split(`src`)
-        log.verbose(dirArray)
-        const projectRootName = dirArray[0]
-        log.verbose(projectRootName)
 
-        const appConfigDir = path.resolve(projectRootName, 'src/app.config.js')//当前项目下，任意文件位置可以进入该配置文件
+        const appDirArr = root.split(`pages`)
+     
+        const fileList = fse.readdirSync(appDirArr[0])//读取目录下 所有文件
 
+        log.verbose(fileList)
+        let appConfigDir = '';
+        fileList.map((file) => {
+            if (file.indexOf('app.config') != -1) {
+                appConfigDir = `${appDirArr[0]}${file}`
+            }
+        })
+
+        log.verbose(appConfigDir)
         //获取配置文件中需要的路径地址
         const pageDirArr = pageDir.split(`src/`)
         const newConfigDir = pageDirArr[1]
 
+        log.verbose(newConfigDir)
         if (!newConfigDir) {
             return
         }
@@ -50,7 +60,7 @@ function writePageDirToConfig(pageDir) {
             let dataArr = data.split(/\r\n|\n|\r/gm)
 
             if ((dataArr[0].indexOf('defineAppConfig') != -1) && dataArr[1].indexOf('pages: [') != -1) {
-                
+
                 dataArr.splice(3, 0, `    '${newConfigDir + '/index'}',`)
                 fse.writeFile(appConfigDir, dataArr.join('\r\n'), (err) => {
                     if (err) {
