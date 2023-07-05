@@ -72,9 +72,9 @@ function writePageDirToConfig(pageDir) {
             const arrSecond = path.normalize(resSecond).split(splitStra)
 
             log.verbose(arrSecond)
-           
+
             arrSecond.map((item, index) => {
-                newConfigDir = newConfigDir + item + '/'
+                newConfigDir = newConfigDir + item + (arrSecond.length == (index + 1) ? '' : '/')
             })
         }
 
