@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/tarocomponent",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "create taro component",
   "author": "FTD-ZF",
   "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
@@ -24,7 +24,7 @@
     "url": "https://github.com/FTD-ZF/lernaCli/issues"
   },
   "dependencies": {
-    "@ftd-zf/command": "^0.0.12",
+    "@ftd-zf/command": "^0.0.13",
     "execa": "^7.1.1",
     "path-exists": "^5.0.0"
   },
