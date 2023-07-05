@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/generate",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "根据swagger文档自动化生成前端service代码",
   "author": "FTD-ZF",
   "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
@@ -28,8 +28,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@ftd-zf/command": "^0.0.13",
-    "@ftd-zf/utils": "^0.0.13",
+    "@ftd-zf/command": "^0.0.14",
+    "@ftd-zf/utils": "^0.0.14",
     "@umijs/openapi": "^1.8.3",
     "chalk": "^5.2.0",
     "fse": "^4.0.1"
