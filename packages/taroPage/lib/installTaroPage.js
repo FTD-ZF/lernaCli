@@ -55,6 +55,7 @@ function writePageDirToConfig(pageDir) {
         }
 
         fse.readFile(appConfigDir, 'utf8', (err, data) => {
+            log.verbose(err)
             log.verbose(data)
 
             let dataArr = data.split(/\r\n|\n|\r/gm)
