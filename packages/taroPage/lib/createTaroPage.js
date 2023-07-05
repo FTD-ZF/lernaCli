@@ -49,6 +49,9 @@ export default async function createTaroPage(name, opts) {
     if ((await fse.pathExists(join(root, addName)))) {
         return log.error(chalk.red(addName + '文件已经存在！'))
     }
+    if (root.indexOf('pages') == -1) {
+        return log.error(chalk.red('Taro页面需要在pages文件下生成！'))
+    }
 
     log.verbose('addName', addName)
 

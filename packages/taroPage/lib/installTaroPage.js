@@ -4,6 +4,7 @@ import { pathExistsSync } from 'path-exists'
 import ora from 'ora'
 import { log } from '@ftd-zf/utils'
 
+
 function getCacheFilePath(targetPath, template) {
     return path.resolve(targetPath, 'node_modules', template.npmName, 'template')
 }
@@ -33,7 +34,7 @@ function writePageDirToConfig(pageDir) {
         let root = process.cwd();//当前项目根目录
 
         const appDirArr = root.split(`pages`)
-     
+
         const fileList = fse.readdirSync(appDirArr[0])//读取目录下 所有文件
 
         log.verbose(fileList)
@@ -43,11 +44,38 @@ function writePageDirToConfig(pageDir) {
                 appConfigDir = `${appDirArr[0]}${file}`
             }
         })
-
         log.verbose(appConfigDir)
+
         //获取配置文件中需要的路径地址
-        const pageDirArr = pageDir.split(`src/`)
-        const newConfigDir = pageDirArr[1]
+        let newConfigDir = ''
+
+        const strPages = path.normalize('\\pages\\')
+
+        if (pageDir.indexOf(strPages) == -1) {
+            const pageDirArr = pageDir.split(`src/`)
+            newConfigDir = pageDirArr[1]
+        } else {
+            //windows下路径
+            const resFirst = path.normalize(pageDir)
+            log.verbose(resFirst)
+            const splitStr = path.normalize(`\\pages\\`)
+            log.verbose(splitStr)
+            const arrFirst = resFirst.split(splitStr)
+            log.verbose(arrFirst)
+            const splitStra = path.normalize(`\\`)
+            log.verbose(splitStra)
+            if (!arrFirst[1]) {
+                return
+            }
+            const arrSecond = arrFirst[1].split(splitStra)
+            log.verbose(arrSecond)
+            let newConfigDir = ''
+            arrSecond.map((item, index) => {
+                newConfigDir = newConfigDir + item + '/'
+            })
+        }
+
+
 
         log.verbose(newConfigDir)
         if (!newConfigDir) {
@@ -55,6 +83,7 @@ function writePageDirToConfig(pageDir) {
         }
 
         fse.readFile(appConfigDir, 'utf8', (err, data) => {
+            log.verbose('==readFile==')
             log.verbose(err)
             log.verbose(data)
 
