@@ -12,7 +12,7 @@ function copyFile(targetPath, template, installDir, dirName) {
 
     const originFile = getCacheFilePath(targetPath, template) //模版目录文件
     const fileList = fse.readdirSync(originFile)//读取目录下 所有文件
-   
+
     const spinner = ora({
         text: '正在拷贝模版组件...',
         interval: 180, // Optional
@@ -28,6 +28,7 @@ function copyFile(targetPath, template, installDir, dirName) {
 
 //修改组件名称
 function changeComponentName(pageDir, dirName) {
+    log.verbose('=====changeComponentName=====')
     try {
         log.verbose(pageDir)
 
@@ -42,6 +43,7 @@ function changeComponentName(pageDir, dirName) {
 
             const appConfigDir = path.resolve(pageDir + '/', 'index.js')
 
+            log.verbose(appConfigDir)
             fse.readFile(appConfigDir, 'utf8', (err, data) => {
                 log.verbose(data)
 
@@ -49,7 +51,7 @@ function changeComponentName(pageDir, dirName) {
                     return
                 }
 
-                const newData = data.replaceAll('TaroComponentName', newDirName)
+                const newData = data.replace(/TaroComponentName/g, newDirName)
 
                 fse.writeFile(appConfigDir, newData, (err) => {
                     if (err) {
