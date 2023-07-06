@@ -41,8 +41,8 @@ npm i @ftd-zf/cli -g
 }
 ```
 
-##### 配置文件参数说明
-1. openApi （可配置多个swagger json文档）
+##### template.config.json配置文件参数说明
+1. openApi中 （可配置多个swagger json文档）
 
 | 参数           |  描述                |
 | ----------------- | ----------------|
@@ -53,7 +53,7 @@ npm i @ftd-zf/cli -g
 
 
 
-2. upload dir（可配置多个上传文件）
+2. upload中 dir（可配置多个上传文件）
 
 | 参数           |  描述                |
 | ----------------- | ----------------|
@@ -61,13 +61,17 @@ npm i @ftd-zf/cli -g
 |   ossFileName      |    上传资源文件名   |
 
 
-3. upload aliOSS （参考阿里oss参数配置信息）
+3. upload中 aliOSS （参考阿里oss参数配置信息）
 
 
 ##### 相关说明
 
-* ftdcli gen 和 ftdcli oss 命令 需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
+* ftdcli gen 和 ftdcli oss  需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
 
-* ftdcli taropage pagename 和ftdcli tarocomponent componentname 在Taro项目中即可使用
+* ftdcli taropage [pagename] 创建页面 需要在Taro项目下，pages文件夹下进行操作
+
+* ftdcli tarocomponent [componentname] 创建组件 在Taro项目中即可使用
 
 * ftdcli oss 命令仅用于上传资源，项目中还需将本地资源的引用路径转化为oss线上地址（可用插件 <https://github.com/FTD-ZF/babel-plugin-replace-assets-with-url>）
+
+
