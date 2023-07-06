@@ -22,9 +22,9 @@ function copyFile(targetPath, template, installDir) {
     })
     spinner.stop()
     log.success('模版拷贝成功')
-    if (template.value.indexOf('webpack4') != -1) {
-        changePackageContent(installDir)
-    }
+    // if (template.value.indexOf('webpack4') != -1) {
+    //     changePackageContent(installDir)
+    // }
 }
 
 //修改packagejson中的内容
