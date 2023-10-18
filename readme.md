@@ -12,6 +12,8 @@ npm i @ftd-zf/cli -g
 根据swagger文档自动化生成前端service代码
 5. ftdcli oss
 将资源上传阿里OSS
+6. ftdcli lint
+对项目进行代码检查，并生成检查结果文件
 
 #### 项目根目录 配置文件 template.config.json
 ```
@@ -68,7 +70,7 @@ npm i @ftd-zf/cli -g
 
 * ftdcli gen 和 ftdcli oss  需要配置文件template.config.json才能进行使用，均为项目根目录执行命令
 
-* ftdcli taropage [pagename] 创建页面 需要在Taro项目下，pages文件夹下进行操作
+* ftdcli taropage [pagename] 创建页面 需要在Taro项目下，pages文件夹下进行操作，同时在pages目录下生成nav.js文件，用于项目中页面跳转使用
 
 * ftdcli tarocomponent [componentname] 创建组件 在Taro项目中即可使用
 

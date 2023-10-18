@@ -23,6 +23,7 @@
   "dependencies": {
     "@ftd-zf/generate": "^0.0.16",
     "@ftd-zf/init": "^0.0.16",
+    "@ftd-zf/lint": "^0.0.16",
     "@ftd-zf/oss": "^0.0.16",
     "@ftd-zf/tarocomponent": "^0.0.16",
     "@ftd-zf/taropage": "^0.0.16",

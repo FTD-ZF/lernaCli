@@ -1,0 +1,36 @@
+{
+  "name": "@ftd-zf/lint",
+  "version": "0.0.16",
+  "description": "eslint",
+  "author": "FTD-ZF",
+  "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTD-ZF/lernaCli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/lint.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/FTD-ZF/lernaCli/issues"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.9",
+    "eslint": "^8.47.0",
+    "execa": "^8.0.1",
+    "path-exists": "^5.0.0"
+  }
+}

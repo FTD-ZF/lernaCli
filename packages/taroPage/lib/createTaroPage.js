@@ -27,6 +27,19 @@ function getAddName() {
         }
     })
 }
+//添加备注内容
+function getAddRemark() {
+    return makeInput({
+        message: '请输入页面描述',
+        defaultValue: '',
+        // validate(v) {
+        //     if (v.length > 0) {
+        //         return true
+        //     }
+        //     return '请输入创建组件名称'
+        // }
+    })
+}
 
 //安装缓存目录
 function makeTargetPath() {
@@ -44,15 +57,18 @@ export default async function createTaroPage(name, opts) {
         addName = await getAddName()
     }
 
-    let root = process.cwd();//当前项目根目录
 
+
+    let root = process.cwd();//当前项目根目录
+    log.verbose(root)
     if ((await fse.pathExists(join(root, addName)))) {
         return log.error(chalk.red(addName + '文件已经存在！'))
     }
     if (root.indexOf('pages') == -1) {
         return log.error(chalk.red('Taro页面需要在pages文件下生成！'))
     }
-
+    const addRemark = await getAddRemark()
+    log.verbose('addRemark', addRemark)
     log.verbose('addName', addName)
 
     //获取最新版本号
@@ -63,6 +79,7 @@ export default async function createTaroPage(name, opts) {
         name: addName,
         targetPath,
         template: pageTemplate,
+        addRemark: addRemark,
     }
 
 }
