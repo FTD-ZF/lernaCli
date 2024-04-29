@@ -17,6 +17,12 @@ const templateData = [
     value: 'vue3-template',
     version: '1.0.0'
   },
+  {
+    name: 'NestJs项目模版',
+    npmName: '@ftd-zf/nestjs-template',
+    value: 'nestjs-template',
+    version: '1.0.0'
+  },
   // {
   //   name: 'Taro项目模版(钉钉)',
   //   npmName: '@ftd-zf/taro-template',
