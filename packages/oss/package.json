@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/oss",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "OSS上传",
   "author": "FTD-ZF",
   "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
@@ -28,8 +28,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@ftd-zf/command": "^0.0.19",
-    "@ftd-zf/utils": "^0.0.19",
+    "@ftd-zf/command": "^0.0.20",
+    "@ftd-zf/utils": "^0.0.20",
     "ali-oss": "^6.17.1",
     "chalk": "^5.2.0",
     "fs-extra": "^11.1.1"
