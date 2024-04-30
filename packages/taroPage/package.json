@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/taropage",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "create taro page",
   "author": "FTD-ZF",
   "homepage": "https://github.com/FTD-ZF/lernaCli#readme",
@@ -28,9 +28,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@ftd-zf/command": "^0.0.21",
-    "@ftd-zf/data": "^0.0.21",
-    "@ftd-zf/utils": "^0.0.21",
+    "@ftd-zf/command": "^0.0.22",
+    "@ftd-zf/data": "^0.0.22",
+    "@ftd-zf/utils": "^0.0.22",
     "execa": "^7.1.1",
     "path-exists": "^5.0.0"
   }
