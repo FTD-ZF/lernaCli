@@ -32,11 +32,12 @@ function writePageDirToConfig(pageDir, addRemark) {
     log.verbose(pageDir)
     try {
         let root = process.cwd();//当前项目根目录
-     
+
         log.verbose(root)
 
         const appDirArr = root.split(`pages`)
-
+        log.verbose('===log.verbose(appDirArr)===')
+        log.verbose(appDirArr)
         const fileList = fse.readdirSync(appDirArr[0])//读取目录下 所有文件
 
         log.verbose(fileList)
@@ -46,12 +47,12 @@ function writePageDirToConfig(pageDir, addRemark) {
                 appConfigDir = `${appDirArr[0]}${file}`
             }
         })
-        log.verbose(appConfigDir)
+        log.verbose('appConfigDir==' + appConfigDir)
 
         //获取配置文件中需要的路径地址
         let newConfigDir = ''
 
-        const strPages = path.normalize('\\pages\\')
+        const strPages = path.normalize('\\pages')
 
         if (pageDir.indexOf(strPages) == -1) {
             const pageDirArr = pageDir.split(`src/`)
@@ -86,6 +87,7 @@ function writePageDirToConfig(pageDir, addRemark) {
             return
         }
 
+        log.verbose('newConfigDir==' + newConfigDir)
         fse.readFile(appConfigDir, 'utf8', (err, data) => {
             log.verbose('==readFile==')
             log.verbose(err)
@@ -101,8 +103,7 @@ function writePageDirToConfig(pageDir, addRemark) {
                         log.error(err)
                     }
 
-                    const navDir = root + '/nav.js'//定义“跳转”的文件路径
-                    log.verbose(navDir)
+
                     const navUrlContent = `'${newConfigDir + '/index'}'`//跳转url
 
                     const funcNameArr = newConfigDir.split('/')
@@ -111,12 +112,17 @@ function writePageDirToConfig(pageDir, addRemark) {
 
                     let firstUrl = ''
 
-                    if (navDir.indexOf(strPages) == -1) {
+                    if (root.indexOf(strPages) == -1) {
+                        const navDir = root + '/nav.js'//定义“跳转”的文件路径
+                        log.verbose(navDir)
                         const firstArr = navDir.split(`pages`)
                         firstUrl = firstArr[0] + 'pages/nav.js'
 
                     } else {
                         //windows下路径
+                        log.verbose('==windows下路径==')
+                        const navDir = root + '\\nav.js'//定义“跳转”的文件路径
+                        log.verbose(navDir)
                         const resFirst = path.normalize(navDir)
                         log.verbose(resFirst)
                         const splitStr = path.normalize(`\\pages\\`)
@@ -124,7 +130,7 @@ function writePageDirToConfig(pageDir, addRemark) {
                         const arrFirst = resFirst.split(splitStr)
                         log.verbose(arrFirst)
 
-                        firstUrl = arrFirst[0] + 'pages\\nav.js'
+                        firstUrl = arrFirst[0] + '\\pages\\nav.js'
                         // log.verbose(splitStra)
                         // if (!arrFirst[1]) {
                         //     return
@@ -139,7 +145,7 @@ function writePageDirToConfig(pageDir, addRemark) {
                         //     newConfigDir = newConfigDir + item + (arrSecond.length == (index + 1) ? '' : '/')
                         // })
                     }
-                    log.verbose(firstUrl)
+                    log.verbose('firstUrl===' + firstUrl)
                     const params = {
                         firstUrl, navUrlContent, addRemark, funcName,
                     }
