@@ -13,7 +13,7 @@ const __dirname = dirname(import.meta)
 const pagPath = path.resolve(__dirname, '../package.json')
 const pkg = fse.readJsonSync(pagPath)
 
-const LOWEST_NODE_VERSION = '14.0.0'
+const LOWEST_NODE_VERSION = '15.0.0'
 
 function checkNodeVersion(params) {
     // log.verbose('node version', process.version)
