@@ -33,5 +33,6 @@
     "@umijs/openapi": "^1.8.3",
     "chalk": "^5.2.0",
     "fse": "^4.0.1"
-  }
+  },
+  "gitHead": "fcf908b58119dd52852492d06c9527ce81c77bba"
 }

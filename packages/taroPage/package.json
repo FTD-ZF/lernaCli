@@ -33,5 +33,6 @@
     "@ftd-zf/utils": "^0.0.23",
     "execa": "^7.1.1",
     "path-exists": "^5.0.0"
-  }
+  },
+  "gitHead": "fcf908b58119dd52852492d06c9527ce81c77bba"
 }

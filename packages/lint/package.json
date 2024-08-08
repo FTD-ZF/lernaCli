@@ -32,5 +32,6 @@
     "eslint": "^8.47.0",
     "execa": "^8.0.1",
     "path-exists": "^5.0.0"
-  }
+  },
+  "gitHead": "fcf908b58119dd52852492d06c9527ce81c77bba"
 }
