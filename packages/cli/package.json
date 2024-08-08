@@ -1,6 +1,6 @@
 {
   "name": "@ftd-zf/cli",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "template cli",
   "author": "FTD-ZF",
   "homepage": "",
@@ -21,13 +21,13 @@
     "test": "node ./__tests__/cli.test.js"
   },
   "dependencies": {
-    "@ftd-zf/generate": "^0.0.23",
-    "@ftd-zf/init": "^0.0.23",
-    "@ftd-zf/lint": "^0.0.23",
-    "@ftd-zf/oss": "^0.0.23",
-    "@ftd-zf/tarocomponent": "^0.0.23",
-    "@ftd-zf/taropage": "^0.0.23",
-    "@ftd-zf/utils": "^0.0.23",
+    "@ftd-zf/generate": "^0.0.24",
+    "@ftd-zf/init": "^0.0.24",
+    "@ftd-zf/lint": "^0.0.24",
+    "@ftd-zf/oss": "^0.0.24",
+    "@ftd-zf/tarocomponent": "^0.0.24",
+    "@ftd-zf/taropage": "^0.0.24",
+    "@ftd-zf/utils": "^0.0.24",
     "chalk": "^5.2.0",
     "commander": "^10.0.1",
     "dirname-filename-esm": "^1.1.1",
