@@ -168,7 +168,7 @@ function writePageDirToConfig(pageDir, addRemark) {
 
 // 写入'taro跳转方法'到指定文件
 function writeNavContent(params) {
-    log.verbose(params)
+    log.verbose(JSON.stringify(params))
     const { firstUrl, navUrlContent, addRemark, funcName, } = params
 
     fse.readFile(firstUrl, 'utf8', (err, data) => {
@@ -193,7 +193,23 @@ function writeNavContent(params) {
         arrFuncName.map((item, index) => {
             newFuncName = newFuncName + (index === 0 ? item.toUpperCase() : item)
         })
+
+
+        //判定是否有重复的方法
+        let curCount = 0
+        dataArr.length > 0 && dataArr.map((item, index) => {
+            if (item.indexOf(`Nav${newFuncName}`) != -1) {
+                curCount++
+            }
+        })
+
+        //如果有重复的方法名,则在方法名后面加上_1,_2,_3...
+        if (curCount > 0) {
+            newFuncName = newFuncName + '_' + curCount
+        }
+
         log.verbose(newFuncName)
+
         const curNavUrlContent = insertStr(navUrlContent, 1, '/');
         log.verbose(curNavUrlContent)
 

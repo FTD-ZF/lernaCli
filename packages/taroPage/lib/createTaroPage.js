@@ -32,12 +32,12 @@ function getAddRemark() {
     return makeInput({
         message: '请输入页面描述',
         defaultValue: '',
-        // validate(v) {
-        //     if (v.length > 0) {
-        //         return true
-        //     }
-        //     return '请输入创建组件名称'
-        // }
+        validate(v) {
+            if (v.length > 0) {
+                return true
+            }
+            return '请输入页面描述'
+        }
     })
 }
 

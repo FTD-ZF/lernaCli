@@ -52,7 +52,7 @@ class UploadOSSCommand extends Command {
 
         fse.readdir(dir, function (err, files) {
 
-          console.log(files);
+          // console.log(files);
           if (files && files.length != 0) {
             files.forEach(async (filename) => {
 
