@@ -14,7 +14,7 @@ function copyFile(targetPath, template, installDir, addRemark) {
     const originFile = getCacheFilePath(targetPath, template) //模版目录文件
     const fileList = fse.readdirSync(originFile)//读取目录下 所有文件
     const spinner = ora({
-        text: '正在拷贝模版页面...',
+        text: '正在生成页面...',
         interval: 180, // Optional
         spinner: 'runner'
     }).start()
@@ -22,7 +22,7 @@ function copyFile(targetPath, template, installDir, addRemark) {
         fse.copySync(`${originFile}/${file}`, `${installDir}/${file}`)// 拷贝文件或文件夹
     })
     spinner.stop()
-    log.success('模版页面拷贝成功')
+    log.success('页面生成成功')
     writePageDirToConfig(installDir, addRemark)
 }
 
