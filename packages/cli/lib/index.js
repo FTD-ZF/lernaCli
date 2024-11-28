@@ -5,6 +5,7 @@ import createTaroPageCommand from '@ftd-zf/taropage'
 import createTaroComponentCommand from '@ftd-zf/tarocomponent'
 import createESLintCommand from '@ftd-zf/lint'
 import createCli from './createCli.js'
+import createTaroAllPageCommand from '@ftd-zf/taroPageAll'
 
 import './exception.js'
 
@@ -13,6 +14,7 @@ export default function (args) {
     const program = createCli()
     createInitCommand(program)
     createTaroPageCommand(program)
+    createTaroAllPageCommand(program)
     createTaroComponentCommand(program)
     createGenerateCommand(program)
     createUploadOSSCommand(program)
