@@ -35,6 +35,5 @@
     "execa": "7.1.1",
     "fs-extra": "^11.2.0",
     "path-exists": "^5.0.0"
-  },
-  "gitHead": "1caee2c190a6271adc31adc98c42371cbad761b6"
+  }
 }
